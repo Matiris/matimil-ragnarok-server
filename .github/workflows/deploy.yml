@@ -54,7 +54,10 @@ jobs:
         run: |
           ssh -p ${{ secrets.SERVER_SSH_PORT }} ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << EOF
             cd /home/${SERVER_USER}/ragnarok-server
-
+            echo "Clean up logs"
+            docker system prune -af --volumes
+            sudo journalctl --vacuum-size=100M
+            
             echo "Stopping containers"
             docker compose down
           EOF
@@ -78,7 +81,7 @@ jobs:
         run: |
           ssh -p ${{ secrets.SERVER_SSH_PORT }} ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << EOF
             cd /home/${SERVER_USER}/ragnarok-server
-
+            
             echo "Docker login"
             echo "${DOCKERHUB_TOKEN}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
 
