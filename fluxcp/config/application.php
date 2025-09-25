@@ -235,8 +235,8 @@ return array(
 	'SDCreditReward'			=> 10,						// Number of credits to award account.
 
 // Discord Webhooks
-	'DiscordUseWebhook'			=> false,
-	'DiscordWebhookURL'			=> 'enter_webhook_url_from_discord_here',
+	'DiscordUseWebhook'			=> true,
+	'DiscordWebhookURL'			=> 'https://discord.com/api/webhooks/1420638702467551232/liSelq2_tqd-XQN9K5LoyFoqaZ7E-XBOFCK9u3SVNXImOh7k6DL-23aHnHE3M-yPavUa',
     'DiscordSendOnRegister'     => true, // Sends a channel message when someone registers
     'DiscordSendOnNewTicket'    => true, // Sends a channel message when someone submits a new ticket to the Service Desk
     'DiscordSendOnWebCommand'   => true, // Sends a channel message when someone uses the Web Command feature in FluxCP
